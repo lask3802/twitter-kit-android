@@ -78,7 +78,8 @@ public class OkHttpClientHelper {
                                                Session<? extends TwitterAuthToken> session,
                                                TwitterAuthConfig authConfig) {
         return builder
-                .certificatePinner(getCertificatePinner())
+				//For issue https://twittercommunity.com/t/oauth-request-token-failure-in-android-ios-app-with-ssl-certificate-pinning-error/209247
+                //.certificatePinner(getCertificatePinner())
                 .addInterceptor(new OAuth1aInterceptor(session, authConfig));
     }
 
